@@ -1,0 +1,4 @@
+scapy=2.4.4
+pip=21.0.1
+matplotlib=3.4.1
+requests=2.25.1

@@ -8,7 +8,9 @@ First: Create an file with the name of the libraries.
 
 After, run the script.
 
-You can use **-f** or **--file** to specify the file / path with the name of the libraries.
+Observations:
+
+You can use **-f** or **--file** to specify the file / path with the name of the libraries or, inform after execution..
 
 > **Example:** python .\initialise.py -f .\packets.txt
 

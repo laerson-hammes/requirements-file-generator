@@ -16,4 +16,4 @@ You can use **-f** or **--file** to specify the file / path with the name of the
 
 For help, **-h** or **--help**.
 
-> **Example:** python .\whois-script.py -h
+> **Example:** python .\initialise.py -h

@@ -49,8 +49,7 @@ class RequirementsGenerator(object):
       parser.add_argument("-f", "--file", dest="file", help="File name with the name of the libraries")
       options = parser.parse_args()
       if not options.file:
-         file_name: str = str(input("Enter the name of the file with the name of the libraries: "))
-         return file_name
+         return str(input("Enter the name of the file with the name of the libraries: "))
       return options.file
 
 

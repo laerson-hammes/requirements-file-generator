@@ -1,3 +1,4 @@
+from typing import List, Dict
 from importlib import metadata
 import argparse
 
@@ -7,8 +8,8 @@ class RequirementsGenerator(object):
       self.run()
 
 
-   def get_version(self, packets: list[str], /) -> dict:
-      result: dict = {}
+   def get_version(self, packets: List[str], /) -> Dict:
+      result: Dict = {}
       for packet in packets:
          try:
             result.update({packet: metadata.version(packet)})
@@ -17,8 +18,8 @@ class RequirementsGenerator(object):
       return result
 
 
-   def read_file(self, file_name: str, /) -> list[str]:
-      packets: list[str] = []
+   def read_file(self, file_name: str, /) -> List[str]:
+      packets: List[str] = []
       try:
          with open(file_name, "r") as f:
             for line in f.readlines():
@@ -28,7 +29,7 @@ class RequirementsGenerator(object):
          raise Exception("File not found error...")
          
 
-   def requirements_file_generator(self, packets: dict, /) -> None:
+   def requirements_file_generator(self, packets: Dict, /) -> None:
       with open("requirements.txt", "w") as f:
          for index, packet in enumerate(packets):
             final: str  = "\n"
@@ -38,8 +39,8 @@ class RequirementsGenerator(object):
 
 
    def run(self, /) -> None:
-      packets: list[str] = self.read_file(self.get_arguments())
-      packets_version: dict = self.get_version(packets)
+      packets: List[str] = self.read_file(self.get_arguments())
+      packets_version: Dict = self.get_version(packets)
       self.requirements_file_generator(packets_version)
 
 
